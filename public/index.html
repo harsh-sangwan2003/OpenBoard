@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/public/Assets/Images/Icons/favicon.ico">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js" integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./Scripts/tools.js" defer></script>
+    <script src="./Scripts/canvas.js" defer></script>
+    <script defer>
+        
+        let socket = io.connect("http://localhost:5000");
+
+    </script>
+
+    <title>OpenBoard</title>
+</head>
+<body>
+    
+    <div class="options-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="./Assets/Images/Icons/Pencil.svg" alt="">
+        <img class="eraser" src="./Assets/Images/Icons/Eraser.svg" alt="">
+        <img class="download" src="./Assets/Images/Icons/Download.svg" alt="">
+        <img class="upload" src="./Assets/Images/Icons/Upload.svg" alt="">
+        <img class="sticky-note" src="./Assets/Images/Icons/StickyNote.svg" alt="">
+        <img class="redo" src="./Assets/Images/Icons/Redo.svg" alt="">
+        <img class="undo" src="./Assets/Images/Icons/Undo.svg" alt="">
+    </div>
+
+    <div class="pencil-tool-cont">
+
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+
+    </div>
+
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="10" value="3" class="eraser-width">
+    </div>
+
+    <canvas></canvas>
+    
+</body>
+</html>
